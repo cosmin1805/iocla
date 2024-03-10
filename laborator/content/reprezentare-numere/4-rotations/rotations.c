@@ -2,7 +2,8 @@
 
 void rotate_left(unsigned int *number, int bits)
 {
-	/* TODO */
+	unsigned int bitMask = -1;
+    
 	(void) number;
 	(void) bits;
 }
