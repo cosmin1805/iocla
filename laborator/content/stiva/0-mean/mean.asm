@@ -16,13 +16,18 @@ global main
 main:
     xor eax, eax
     mov ecx, ARRAY_SIZE
-
     ; TODO1 - compute the sum of the vector numbers - store it in eax
+sum_array:
+    mov bx, word [num_array + (ecx - 1) * 2]
+    add ax, bx
+    loop sum_array
 
     PRINTF32 `Sum of numbers: %d\n\x0`, eax
 
     ; TODO2 - compute the quotient of the mean
-
+    mov ebx, ARRAY_SIZE
+    xor edx, edx 
+    div ebx
     PRINTF32 `Mean of numbers: %d\x0`, eax
     PRINTF32 `.\x0`
 
